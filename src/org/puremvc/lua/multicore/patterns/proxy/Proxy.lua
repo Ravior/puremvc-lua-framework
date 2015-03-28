@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.Proxy
@@ -20,7 +20,7 @@
 * listening for a 
 * {@link puremvc.Notification Notification} 
 * to be sent  when the Proxy has retrieved the data from the service.
- ]]
+]]
 
 Proxy = class("Proxy",Notifier)
 
@@ -33,7 +33,6 @@ Proxy = class("Proxy",Notifier)
 * @param {Object} [data]
 *  The Proxy's data object
 ]]
-
 function Proxy:ctor(proxyName,data)
 	self.proxyName = proxyName or Proxy.NAME
 	if data ~= nil then
@@ -82,8 +81,7 @@ end
 *
 * @return {void}
 ]]
-function Proxy:onRegister()
-end
+function Proxy:onRegister() end
 
 
 --[[
@@ -92,7 +90,6 @@ end
 * 
 * @return {void}
 ]]
-function Proxy:onRemove()
-end
+function Proxy:onRemove() end
 
 

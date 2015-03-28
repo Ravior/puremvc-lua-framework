@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior  
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.SimpleCommand
@@ -22,12 +22,11 @@ SimpleCommand = class("SimpleCommand",Notifier)
 --[[
 * @constructor
 ]]
-function SimpleCommand:ctor()
-end
+function SimpleCommand:ctor() end
 
 
 --[[
-* Fulfill the use-case initiated by the given Notification
+ Fulfill the use-case initiated by the given Notification
 * 
 * In the Command Pattern, an application use-case typically begins with some
 * user action, which results in a Notification is handled by the business logic
@@ -37,5 +36,4 @@ end
 *  The notification to handle.
 * @return {void}
 ]]
-function SimpleCommand:execute(notification)
-end
+function SimpleCommand:execute(notification) end

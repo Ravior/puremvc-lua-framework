@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.Mediator
@@ -40,7 +40,7 @@ Mediator = class("Mediator",Notifier)
 *  The Mediators {@link #setViewComponent viewComponent}.
 ]]
 function Mediator:ctor(mediatorName,viewComponent)
-	self.mediatorName = mediatorName || Mediator.NAME
+	self.mediatorName = mediatorName or Mediator.NAME
 	self.viewComponent = viewComponent
 end
 
@@ -139,12 +139,10 @@ end
 * Called by the View when the Mediator is registered
 * @return {void}
 ]]
-function Mediator:onRegister()
-end
+function Mediator:onRegister() end
 
 
 --[[
 * Called by the View when the Mediator is removed
 ]]
-function  Mediator:onRemove()
-end
+function Mediator:onRemove() end

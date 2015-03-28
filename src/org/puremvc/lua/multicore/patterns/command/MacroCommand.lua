@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.MacroCommand
@@ -64,8 +64,7 @@ end
 * MacroCommands or SimpleCommands are both acceptable.
 * @return {void}
 ]]
-function MacroCommand:initializeMacroCommand()
-end
+function MacroCommand:initializeMacroCommand() end
 
 
 --[[
@@ -90,8 +89,8 @@ end
 ]]
 function MacroCommand:execute(note)
 	while(#self.subCommands > 0) do
-        local ref= table.remove(self.subCommands)
-        local cmd= ref.new()
+        local ref = table.remove(self.subCommands)
+        local cmd = ref.new()
         cmd:initializeNotifier(self.multitonKey)
         cmd:execute(note)
     end

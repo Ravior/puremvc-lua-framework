@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.Observer

@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.Notifier
@@ -37,10 +37,58 @@
 
 Notifier = class("Notifier")
 
+
 --[[
 * @constructor 
 ]]
-function Notifier:ctor()
+function Notifier:ctor() end
+
+
+--[[
+* Create and send a Notification.
+*
+* Keeps us from having to construct new Notification instances in our 
+* implementation code.
+* 
+* @param {string} notificationName
+*  A notification name
+* @param {Object} [body]
+*  The body of the notification
+* @param {string} [type]
+*  The notification type
+* @return {void}
+]]
+function Notifier:sendNotification(notificationName,body,type)
+	local facade = self:getFacade()
+	if facade ~= nil then
+		facade:sendNotification(notificationName,body,type)
+	end
+end
+
+
+--[[
+* Initialize this Notifier instance.
+* 
+* This is how a Notifier gets its multitonKey. 
+* Calls to #sendNotification or to access the
+* facade will fail until after this method 
+* has been called.
+* 
+* Mediators, Commands or Proxies may override 
+* this method in order to send notifications
+* or access the Multiton Facade instance as
+* soon as possible. They CANNOT access the facade
+* in their constructors, since this method will not
+* yet have been called.
+* 
+*
+* @param {string} key
+*  The Notifiers multiton key;
+* @return {void}
+]]
+function Notifier:initializeNotifier(key)
+	self.multitonKey = tostring(key)
+	self.facade = self:getFacade()
 end
 
 
@@ -51,13 +99,13 @@ end
 * @protected
 * @return {puremvc.Facade}
 ]]
-
 function Notifier:getFacade()
-	if self.multitonKey == nil
+	if self.multitonKey == nil then
 		error(Notifier.MULTITON_MSG)
 	end
 	return Facade:getInstance(this.multitonKey);
 end
+
 
 --[[
 * @ignore

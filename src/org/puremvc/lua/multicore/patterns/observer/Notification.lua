@@ -1,5 +1,5 @@
 --[[
-* @author PureMVC LUA Native Port by David Ravior 
+* @author PureMVC LUA Native Port by Ravior 
 * @author Copyright(c) 2015 Gitlib, Inc., Some rights reserved.
 * 
 * @class puremvc.Notification
@@ -33,7 +33,7 @@
 * 
 ]]
 
-Notifaction = class("Notifaction")
+Notification = class("Notification")
 
 
 --[[
@@ -45,10 +45,10 @@ Notifaction = class("Notifaction")
 * @param {Object} [type]
 *  The Notification type
 ]]
-function Notifaction:ctor(name,body,type)
+function Notification:ctor(name,body,type)
 	self.name = name
 	self.body = body
-	self.tyoe = type
+	self.type = type
 end
 
 
@@ -58,7 +58,7 @@ end
 * @return {string}
 *  The name of the Notification instance
 ]]
-function Notifaction:getName()
+function Notification:getName()
 	return self.name
 end
 
@@ -68,7 +68,7 @@ end
 * @param {Object} body
 * @return {void}
 ]]
-function Notifaction:setBody(body)
+function Notification:setBody(body)
 	self.body = body
 end
 
@@ -78,7 +78,7 @@ end
 *
 * @return {Object}
 ]]
-function Notifaction:getBody()
+function Notification:getBody()
 	return self.body
 end
 
@@ -89,7 +89,7 @@ end
 * @param {Object} type
 * @return {void}
 ]]
-function Notifaction:setType(type)
+function Notification:setType(type)
 	self.type = type
 end
 
@@ -99,7 +99,7 @@ end
 * 
 * @return {Object}
 ]]
-function Notifaction:getType()
+function Notification:getType()
 	return self.type
 end
 
@@ -109,9 +109,9 @@ end
 *
 * @return {string}
 ]]
-function Notifaction:toString()
+function Notification:toString()
 	local msg= "Notification Name: " .. self:getName()
-    msg = msg .. "\nBody:" + tostring(self:getBody())
-    msg = msg .. "\nType:" + self:getType()
+    msg = msg .. "\nBody:" .. tostring(self:getBody())
+    msg = msg .. "\nType:" .. tostring(self:getType())
     return msg;
 end
