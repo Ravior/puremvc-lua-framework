@@ -348,7 +348,7 @@ end
 * @return {void}
 ]]
 function Facade:sendNotification(notificationName,body,type)
-	self:notifyObservers(new Notification(notificationName,body,type))
+	self:notifyObservers(Notification.new(notificationName,body,type))
 end
 
 
